@@ -7,14 +7,51 @@ export const StyledProjects = styled.div`
 `;
 
 export const ContainerProjectStyled = styled.div`
-  margin-top: 40px;
-  gap: 20px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  .project__container {
+    margin-top: 40px;
+    flex-direction: column;
+    gap: 20px;
+    display: flex;
+    padding: 0px 10px;
+    img {
+      width: 400px;
+    }
+  }
+`;
+
+export const DescriptionContainerStyled = styled.div`
+  background-color: #101c34;
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+
+  p {
+    color: #fff;
+  }
+`;
+
+export const ButtonStyleds = styled.button`
+  background-color: #101c34;
+  color: black;
+  width: 100px;
+  height: 40px;
+  font-size: 1.1rem;
+  color: white;
+  border: none;
+`;
+
+export const ContainerSlideButtons = styled.div`
+  display: flex;
   align-items: center;
   justify-content: center;
-
-  img {
-    max-width: 400px;
-  }
+  width: 300px;
+  margin: 0 auto;
+  gap: 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 `;

@@ -1,4 +1,10 @@
-import { ContainerProjectStyled, StyledProjects } from "./styled";
+import {
+  ButtonStyleds,
+  ContainerProjectStyled,
+  ContainerSlideButtons,
+  DescriptionContainerStyled,
+  StyledProjects,
+} from "./styled";
 import { useState } from "react";
 import { MockedProjects } from "./projects";
 
@@ -20,15 +26,42 @@ export function Projects() {
     setIndice(index);
   }
 
+  function prevProject(index: number): void {
+    if (index > projects.length) {
+      setIndice(0);
+      return;
+    }
+    setIndice(index);
+  }
+
   return (
     <StyledProjects>
       <ContainerProjectStyled>
-        <h2>{projects[indice].nome}</h2>
-        <img src={projects[indice].foto} />
-        <p>{projects[indice].descricao}</p>
+        <div className="project__container">
+          <h2>{projects[indice].nome}</h2>
+          <img src={projects[indice].foto} />
+        </div>
+        <DescriptionContainerStyled>
+          <p>{projects[indice].descricao}</p>
+        </DescriptionContainerStyled>
       </ContainerProjectStyled>
 
-      <button onClick={() => nextProject(indice + 1)}>proximo</button>
+      <ContainerSlideButtons>
+        {indice > 0 ? (
+          <ButtonStyleds onClick={() => prevProject(indice - 1)}>
+            anterior
+          </ButtonStyleds>
+        ) : (
+          ""
+        )}
+        {indice >= 0 && indice < projects.length - 1 ? (
+          <ButtonStyleds onClick={() => nextProject(indice + 1)}>
+            Proximo
+          </ButtonStyleds>
+        ) : (
+          ""
+        )}
+      </ContainerSlideButtons>
     </StyledProjects>
   );
 }
