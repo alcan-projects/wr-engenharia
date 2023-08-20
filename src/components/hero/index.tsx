@@ -1,21 +1,34 @@
-import { ContainerStyled, HeroStyled } from "./style";
+import {
+  HeroButtonStyled,
+  HeroContainerStyled,
+  LogoStyled,
+  SocialContainer,
+  TextContainerStyled,
+} from "./styles";
+
 import logo from "../../assets/images/logo.png";
-import { GlobalButtonStyled } from "../../global/styles";
 
 export function Hero() {
   return (
-    <ContainerStyled>
-      <img src={logo} alt="" />
-      <HeroStyled>
-        <h1>Engenharia</h1>
+    <HeroContainerStyled imgUrl={"../../assets/images/banner.jpg"}>
+      <LogoStyled>
+        <img src={logo} alt="logo-wr_engenharia" />
+      </LogoStyled>
+      <TextContainerStyled>
+        <h1>WR Engenharia</h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sed saepe
-          veniam commodi. Enim provident voluptatem cum nostrum et, quaerat
-          praesentium deleniti nobis dolore ipsa neque ratione quisquam eum
-          expedita pariatur.
+          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure error
+          magnam nobis labore numquam nulla praesentium deleniti repellendus
+          commodi, atque debitis inventore voluptatum at id. Mollitia vitae
+          dolorem sequi dolore?
         </p>
-        <GlobalButtonStyled>Entrar em contato</GlobalButtonStyled>
-      </HeroStyled>
-    </ContainerStyled>
+        <HeroButtonStyled>Entrar em contato</HeroButtonStyled>
+      </TextContainerStyled>
+      <SocialContainer>
+        <a href="insta">Instagram</a>
+        <a href="insta">Facebook</a>
+        <a href="insta">Whatsapp</a>
+      </SocialContainer>
+    </HeroContainerStyled>
   );
 }

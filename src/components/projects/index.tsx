@@ -2,7 +2,6 @@ import {
   ButtonStyleds,
   ContainerProjectStyled,
   ContainerSlideButtons,
-  DescriptionContainerStyled,
   StyledProjects,
 } from "./styled";
 import { useState } from "react";
@@ -38,12 +37,8 @@ export function Projects() {
     <StyledProjects>
       <ContainerProjectStyled>
         <div className="project__container">
-          <h2>{projects[indice].nome}</h2>
           <img src={projects[indice].foto} />
         </div>
-        <DescriptionContainerStyled>
-          <p>{projects[indice].descricao}</p>
-        </DescriptionContainerStyled>
       </ContainerProjectStyled>
 
       <ContainerSlideButtons>

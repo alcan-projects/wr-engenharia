@@ -2,21 +2,25 @@ import styled from "styled-components";
 
 export const StyledProjects = styled.div`
   width: 100%;
+  max-width: 500px;
   height: 100vh;
-  background-color: #fff;
+  background-color: #34e3;
 `;
 
 export const ContainerProjectStyled = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  position: relative;
   .project__container {
     margin-top: 40px;
     flex-direction: column;
     gap: 20px;
     display: flex;
     padding: 0px 10px;
+    position: absolute;
+    left: -179px;
+    top: 50px;
     img {
       width: 400px;
     }
