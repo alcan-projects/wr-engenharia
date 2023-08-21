@@ -1,15 +1,10 @@
 import styled from "styled-components";
 
-type BannerType = {
-  imgUrl: string;
-};
-
-export const HeroContainerStyled = styled.div<BannerType>`
+export const HeroContainerStyled = styled.div`
   border-right: 1px solid #3c3c3c1f;
   display: flex;
   flex-direction: column;
-  background-image: url(${(props) => props.imgUrl});
-  background-size: cover;
+  background-color: #101c34;
   gap: 10px;
   height: 100%;
   width: 100%;
@@ -27,7 +22,11 @@ export const TextContainerStyled = styled.div`
 
   h1 {
     font-size: 5rem;
-    color: #cd8032;
+    color: #fff;
+  }
+
+  p {
+    color: #fff;
   }
 `;
 
@@ -35,7 +34,13 @@ export const HeroButtonStyled = styled.div`
   text-decoration: solid;
   font-weight: 900;
   cursor: pointer;
+  color: #fff;
   font-size: 1.4rem;
+  transition: all 0.3s;
+
+  &:hover {
+    text-decoration: underline;
+  }
 `;
 
 export const LogoStyled = styled.div`
@@ -57,6 +62,6 @@ export const SocialContainer = styled.div`
   a {
     text-decoration: none;
     font-weight: 900;
-    color: #000;
+    color: #fff;
   }
 `;

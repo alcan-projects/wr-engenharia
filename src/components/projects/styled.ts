@@ -4,7 +4,7 @@ export const StyledProjects = styled.div`
   width: 100%;
   max-width: 500px;
   height: 100vh;
-  background-color: #101c34;
+  background-color: #fff;
   display: flex;
   justify-content: center;
 `;
@@ -25,13 +25,14 @@ export const ContainerProjectStyled = styled.div`
     top: 50px;
     img {
       width: 400px;
+      transition: all 0.4s;
     }
   }
 `;
 
 export const ButtonStyleds = styled.button`
   font-size: 3rem;
-  color: white;
+  color: #101c34;
   border: none;
   background-color: transparent;
 `;

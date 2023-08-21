@@ -10,7 +10,7 @@ import logo from "../../assets/images/logo.png";
 
 export function Hero() {
   return (
-    <HeroContainerStyled imgUrl={"../../assets/images/banner.jpg"}>
+    <HeroContainerStyled>
       <LogoStyled>
         <img src={logo} alt="logo-wr_engenharia" />
       </LogoStyled>
