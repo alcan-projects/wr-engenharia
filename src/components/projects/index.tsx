@@ -6,6 +6,7 @@ import {
 } from "./styled";
 import { useState } from "react";
 import { MockedProjects } from "./projects";
+import { FaArrowUp, FaArrowDown } from "react-icons/fa";
 
 type projectType = {
   nome: string;
@@ -44,14 +45,14 @@ export function Projects() {
       <ContainerSlideButtons>
         {indice > 0 ? (
           <ButtonStyleds onClick={() => prevProject(indice - 1)}>
-            anterior
+            <FaArrowUp />
           </ButtonStyleds>
         ) : (
           ""
         )}
         {indice >= 0 && indice < projects.length - 1 ? (
           <ButtonStyleds onClick={() => nextProject(indice + 1)}>
-            Proximo
+            <FaArrowDown />
           </ButtonStyleds>
         ) : (
           ""

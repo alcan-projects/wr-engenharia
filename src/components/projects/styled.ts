@@ -4,7 +4,9 @@ export const StyledProjects = styled.div`
   width: 100%;
   max-width: 500px;
   height: 100vh;
-  background-color: #34e3;
+  background-color: #101c34;
+  display: flex;
+  justify-content: center;
 `;
 
 export const ContainerProjectStyled = styled.div`
@@ -27,35 +29,19 @@ export const ContainerProjectStyled = styled.div`
   }
 `;
 
-export const DescriptionContainerStyled = styled.div`
-  background-color: #101c34;
-  padding: 10px;
-  width: 100%;
-  max-width: 400px;
-
-  p {
-    color: #fff;
-  }
-`;
-
 export const ButtonStyleds = styled.button`
-  background-color: #101c34;
-  color: black;
-  width: 100px;
-  height: 40px;
-  font-size: 1.1rem;
+  font-size: 3rem;
   color: white;
   border: none;
+  background-color: transparent;
 `;
 
 export const ContainerSlideButtons = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   width: 300px;
   margin: 0 auto;
-  gap: 10px;
-  position: absolute;
-  bottom: 10px;
-  right: 10px;
+  gap: 110px;
 `;
