@@ -17,26 +17,37 @@ type projectType = {
 export function Projects() {
   const [projects] = useState<projectType[]>(MockedProjects);
   const [indice, setIndice] = useState(0);
+  const [effectImg, setEfectImg] = useState("paused");
 
   function nextProject(index: number): void {
-    if (index > projects.length) {
-      setIndice(0);
-      return;
-    }
-    setIndice(index);
+    setEfectImg("running");
+    setTimeout(() => {
+      if (index > projects.length) {
+        setIndice(0);
+        setEfectImg("paused");
+        return;
+      }
+      setIndice(index);
+      setEfectImg("paused");
+    }, 500);
   }
 
   function prevProject(index: number): void {
-    if (index > projects.length) {
-      setIndice(0);
-      return;
-    }
-    setIndice(index);
+    setEfectImg("running");
+    setTimeout(() => {
+      if (index > projects.length) {
+        setIndice(0);
+        setEfectImg("paused");
+        return;
+      }
+      setIndice(index);
+      setEfectImg("paused");
+    }, 500);
   }
 
   return (
     <StyledProjects>
-      <ContainerProjectStyled>
+      <ContainerProjectStyled effect={effectImg}>
         <div className="project__container">
           <img src={projects[indice].foto} />
         </div>

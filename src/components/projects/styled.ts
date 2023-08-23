@@ -9,7 +9,11 @@ export const StyledProjects = styled.div`
   justify-content: center;
 `;
 
-export const ContainerProjectStyled = styled.div`
+type EffectType = {
+  effect: string;
+};
+
+export const ContainerProjectStyled = styled.div<EffectType>`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -25,7 +29,25 @@ export const ContainerProjectStyled = styled.div`
     top: 50px;
     img {
       width: 400px;
+      border: 1px solid #0005;
       transition: all 0.4s;
+      animation-name: anima;
+      animation-duration: 500ms;
+      animation-iteration-count: infinite;
+      animation-play-state: ${(props) => props.effect};
+
+      @keyframes anima {
+        10% {
+          width: 405px;
+        }
+
+        50% {
+          width: 420px;
+        }
+        100% {
+          width: 400px;
+        }
+      }
     }
   }
 `;
