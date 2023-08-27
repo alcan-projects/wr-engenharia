@@ -16,6 +16,7 @@
   box-sizing: border-box;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--BGSecondary);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -115,6 +116,9 @@ article {
   height: 100vh;
   overflow-y: auto !important;
   scroll-snap-type: y mandatory;
+}
+.container_fluid::-webkit-scrollbar {
+  width: 0px;
 }
 .container_fluid section {
   height: 100vh;
