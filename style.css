@@ -27,6 +27,7 @@ body {
 article {
   width: 100%;
   position: relative;
+  height: 100%;
 }
 
 /* Tudo que for fixo */
@@ -34,7 +35,11 @@ article {
   height: 100vh;
   width: 100%;
   position: absolute;
-  background-image: linear-gradient(to right, #101c34 70%, var(--BGSecondary) 30%);
+  background-image: linear-gradient(
+    to right,
+    #101c34 70%,
+    var(--BGSecondary) 30%
+  );
   padding: var(--PaddingY) 0 var(--PaddingY) var(--PaddingX);
   display: flex;
   justify-content: space-between;
@@ -44,25 +49,23 @@ article {
   width: 100%;
 }
 .container_arrow {
-  width: 100%;
   display: flex;
+  gap: 10px;
   flex-direction: column;
   align-items: flex-end;
   padding-right: 3em;
 }
-.container_arrow span  {
+.container_arrow span {
   padding: 10px;
   cursor: pointer;
   z-index: 1;
 }
-.container_arrow span:hover {
+.container_arrow span {
   background-color: var(--BGButton);
   color: var(--TextPrimary);
   border-radius: 5px;
 }
-.container_arrow span:hover > i {
-  color: var(--TextPrimary);
-}
+
 .container_arrow span i {
   color: var(--TextSecondary);
   font-size: 30px;
@@ -79,6 +82,7 @@ article {
 .container_fixed .container__text p {
   font-size: 18px;
   padding-bottom: var(--PaddingElements);
+  width: 100%;
 }
 .container_fixed .container__text button {
   width: 300px;
@@ -101,13 +105,16 @@ article {
   text-decoration: none;
   transition: all 0.9s;
 }
+.container__social a i {
+  font-size: 1.4rem;
+  color: var(--TextPrimary);
+  text-decoration: none;
+  transition: all 0.9s;
+}
 
 .container_fixed .container__text .container__social a:hover {
   text-decoration: underline;
 }
-
-
-
 
 /* Tudo que passar */
 .container_fluid {
@@ -117,6 +124,12 @@ article {
   overflow-y: auto !important;
   scroll-snap-type: y mandatory;
 }
+
+.container__text {
+  width: 100%;
+  max-width: 400px;
+}
+
 .container_fluid::-webkit-scrollbar {
   width: 0px;
 }
@@ -134,4 +147,87 @@ article {
   width: 400px;
   border: solid 5px var(--BGSecondary);
   border-radius: 5px;
+}
+
+/*media queries*/
+
+@media screen and (max-width: 1000px) {
+  .container_fixed {
+    background-image: linear-gradient(
+      to right,
+      #101c34 100%,
+      var(--BGSecondary) 0%
+    );
+  }
+
+  .container_fluid section img {
+    width: 250px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .container_fixed {
+    background-image: linear-gradient(
+      to right,
+      #101c34 100%,
+      var(--BGSecondary) 0%
+    );
+  }
+
+  .container__text {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .container_fluid section img {
+    width: 220px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container_fixed {
+    flex-direction: column;
+    padding: 15px 10px;
+  }
+
+  .container_arrow {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    padding-right: 3em;
+  }
+
+  .container_fixed .container__text button {
+    width: 250px;
+    font-size: 1.2rem;
+  }
+
+  .container_fixed .container__text .container__social {
+    display: flex;
+    gap: 10px;
+  }
+
+  .container_fixed .container__text .container__social a {
+    font-size: 1.1rem;
+    color: var(--TextPrimary);
+    text-decoration: none;
+    transition: all 0.9s;
+  }
+
+  .container_fixed .container__text h1 {
+    font-size: 30px;
+    padding: var(--PaddingElements) 0;
+  }
+
+  .container_fluid {
+    height: 300px;
+    top: 450px;
+  }
+
+  .container_fluid section img {
+    width: 200px;
+  }
+
+  .container_fluid section {
+    height: 300px;
+  }
 }
