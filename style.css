@@ -187,16 +187,25 @@ a, button {
 }
 
 @media screen and (max-width: 600px) {
+  article {
+    background-color: var(--BGPrimary);
+  }
+  body {
+    overflow-y: auto;
+  }
   .container_fixed {
     flex-direction: column;
     padding: 15px 10px;
+    height: auto;
+    position: static;
   }
 
   .container_arrow {
-    position: absolute;
-    left: 20px;
-    bottom: 20px;
-    padding-right: 3em;
+    display: none;
+  }
+
+  .container_fixed .container__text {
+    max-width: 90%;
   }
 
   .container_fixed .container__text button {
@@ -222,15 +231,40 @@ a, button {
   }
 
   .container_fluid {
-    height: 300px;
-    top: 450px;
+    height: auto !important;
+    display: flex;
+    flex-wrap: wrap;
+    position: static;
+    overflow-y: hidden !important;
+    justify-content: center;
+    padding-top: 2em;
   }
-
-  .container_fluid section img {
-    width: 200px;
-  }
-
   .container_fluid section {
-    height: 300px;
+    height: 255px !important;
+    width: 45%;
+    padding: 0px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .container_fluid section img {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    border: none;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .container_fluid section {
+    height: 190px !important;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .container_fluid section {
+    height: auto !important;
+    width: 90%;
   }
 }
