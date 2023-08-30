@@ -148,7 +148,7 @@ a, button {
 
 .container_fluid section img {
   width: 450px;
-  border: solid 5px var(--BGSecondary);
+  border: solid 5px white;
   border-radius: 5px;
 }
 
@@ -156,6 +156,30 @@ a, button {
   width: 450px;
   height: 450px;
   position: relative;
+}
+.container_fluid section .dupleImage .title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 2;
+  transition: 0.3s;
+  position: absolute;
+}
+.container_fluid section .dupleImage .title h2 {
+  background-color: var(--TextPrimary);
+  color: var(--BGPrimary);
+  margin-bottom: 1em;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.container_fluid section .dupleImage:hover > .title {
+  transition: 0.3s;
+  opacity: 1;
 }
 .container_fluid section .dupleImage label {
   position: absolute;
