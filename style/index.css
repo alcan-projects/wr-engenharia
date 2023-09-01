@@ -33,6 +33,16 @@ article {
 a, button {
   cursor: pointer !important;
 }
+.WhatsIcon {
+	position: fixed;
+	bottom: 3em;
+	right: 3em;
+	z-index: 999;
+}
+.WhatsIcon img {
+	height: 65px;
+}
+
 /* Tudo que for fixo */
 .container_fixed {
   height: 100vh;
@@ -152,12 +162,12 @@ a, button {
   border-radius: 5px;
 }
 
-.container_fluid section .dupleImage {
+.container_fluid section .AfterBefore {
   width: 450px;
   height: 450px;
   position: relative;
 }
-.container_fluid section .dupleImage .title {
+.title {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -168,7 +178,7 @@ a, button {
   transition: 0.3s;
   position: absolute;
 }
-.container_fluid section .dupleImage .title h2 {
+.title h2 {
   background-color: var(--TextPrimary);
   color: var(--BGPrimary);
   margin-bottom: 1em;
@@ -177,28 +187,97 @@ a, button {
   text-align: center;
   text-transform: uppercase;
 }
-.container_fluid section .dupleImage:hover > .title {
+.title h2 strong {
+  color: var(--BGButton);
+}
+.container_fluid section .AfterBefore:hover > .title {
   transition: 0.3s;
   opacity: 1;
 }
-.container_fluid section .dupleImage label {
+.container_fluid section .AfterBefore label {
   position: absolute;
   width: 60%;
   height: 60%;
 }
-.container_fluid section .dupleImage label:nth-child(1) {
+.container_fluid section .AfterBefore label:nth-child(1) {
   top: 0;
   left: 0;
-}
-.container_fluid section .dupleImage label:nth-child(2) {
-  bottom: 0;
-  right: 0;
   z-index: 1;
 }
-.container_fluid section .dupleImage label img {
+.container_fluid section .AfterBefore label:nth-child(2) {
+  bottom: 0;
+  right: 0;
+}
+.container_fluid section .AfterBefore label img {
   width: 100%;
   height: 100%;
 }
+
+.container_fluid section .AfterBefore label::before {
+  content: attr(data-content);
+  position: absolute;
+  padding: 6px 15px;
+  border: solid 1px #949494;
+  display: inline-block;
+  background-color: var(--BGSecondary);
+  color: var(--TextSecondary);
+  border-radius: 10px;
+  bottom: -15px;
+  left: 15px;
+  font-weight: 600;
+}
+
+/* ForImages */
+.container_fluid section .ForImages {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.container_fluid section .ForImages:hover > .title {
+  transition: 0.3s;
+  opacity: 1;
+}
+.container_fluid section .ForImages .item {
+  width: 50%; 
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container_fluid section .ForImages .item img {
+  width: 95%; 
+  height: 95%;
+}
+
+/* TwoImages */
+.container_fluid section .TwoImages {
+  position: relative;
+  width: 450px;
+  height: 450px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.container_fluid section .TwoImages:hover > .title {
+  transition: 0.3s;
+  opacity: 1;
+}
+.container_fluid section .TwoImages .item {
+  width: 50%; 
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container_fluid section .TwoImages .item img {
+  width: 95%; 
+}
+
 
 /*media queries*/
 
@@ -235,11 +314,63 @@ a, button {
 }
 
 @media screen and (max-width: 600px) {
+    .mobile-none {
+        display: none;
+    }
   article {
     background-color: var(--BGPrimary);
   }
   body {
     overflow-y: auto;
+  }
+  .title {
+    position: static;
+    opacity: 1;
+  }
+  .title h2 {
+    margin-bottom: 5px;
+  }
+  .container_fluid section .AfterBefore,  
+  .container_fluid section .ForImages,
+  .container_fluid section .TwoImages {
+    position: static;
+    width: 100%;
+    height: auto;
+  }
+  .container_fluid section .AfterBefore {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .container_fluid section .AfterBefore .title {
+    width: 100%;
+  }
+  .container_fluid section .AfterBefore label {
+    width: 100%;
+    padding: 10px;
+    position: relative !important;
+  }
+  .container_fluid section .AfterBefore label::before {
+    content: attr(data-content);
+    position: absolute;
+    padding: 6px 15px;
+    border: solid 1px #949494;
+    display: inline-block;
+    background-color: var(--BGSecondary);
+    color: var(--TextSecondary);
+    border-radius: 10px;
+    bottom: -5px;
+    left: 15px;
+    font-weight: 600;
+  }
+  .container_fluid section .AfterBefore label,  
+  .container_fluid section .ForImages label,
+  .container_fluid section .TwoImages label {
+    position: static;
+  }
+  .container_fluid section .ForImages .item,
+  .container_fluid section .TwoImages .item {
+    width: 100%;
+    margin-bottom: 10px;
   }
   .container_fixed {
     flex-direction: column;
@@ -281,16 +412,16 @@ a, button {
   .container_fluid {
     height: auto !important;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     position: static;
     overflow-y: hidden !important;
     justify-content: center;
-    padding-top: 2em;
+    padding: 0px 15px 2em 15px;
   }
   .container_fluid section {
-    height: 255px !important;
-    width: 45%;
-    padding: 0px;
+    width: 100%;
+    height: auto !important;
+    padding: 1em 0;
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
@@ -302,17 +433,12 @@ a, button {
     object-fit: cover;
     border: none;
   }
-}
-
-@media screen and (max-width: 400px) {
-  .container_fluid section {
-    height: 190px !important;
+  .WhatsIcon {
+    right: 2em;
+    bottom: 2em;
+  }
+  .WhatsIcon img {
+    height: 50px;
   }
 }
 
-@media screen and (max-width: 300px) {
-  .container_fluid section {
-    height: auto !important;
-    width: 90%;
-  }
-}
